@@ -6,7 +6,8 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - run: sudo sh -c "echo nameserver 8.8.8.8 > /etc/resolv.conf"
-      - run: docker run busybox nslookup google.com
+      - run: docker run busybox wget -q --spider https://google.com
+      - run: docker run busybox cat /etc/sysctl.conf
       - name: Build the stack
         run: docker-compose up
      # - run: sudo ifconfig
