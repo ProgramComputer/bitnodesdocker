@@ -5,6 +5,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
+        run: cat /etc/sysctl.conf
       - name: Build the stack
         run: docker-compose up 
      # - run: sudo ifconfig
