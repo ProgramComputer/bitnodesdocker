@@ -28,7 +28,7 @@ jobs:
         git config --local user.name "Program Computer"
         git add .
         git commit -m "Updating install-full-node.sh"
-    - name: Push changess
+    - name: Push changes
       uses: ad-m/github-push-action@master
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
