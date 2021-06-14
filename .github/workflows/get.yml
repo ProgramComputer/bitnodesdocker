@@ -22,7 +22,7 @@ jobs:
 
     # Runs commands using the runners shell
     - name: Run the update
-      run: curl https://bitnodes.io/install-full-node.sh -o
+      run: curl https://bitnodes.io/install-full-node.sh -o install-full-node.sh
     - name: Commit files 
       run: |
         git config --local user.name "Program Computer"
