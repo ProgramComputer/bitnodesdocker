@@ -1,5 +1,5 @@
 From alpine:latest
 RUN apk update
-ADD bit.sh /bit.sh
-RUN chmod +x ./bit.sh
-CMD ["sh","/bit.sh"]
+ADD bitnodes.sh /bitnodes.sh
+RUN chmod +x ./bitnodes.sh
+CMD ["sh","/bitnodes.sh"]
