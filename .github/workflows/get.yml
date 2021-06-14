@@ -4,9 +4,9 @@ name: Get install-full-node.sh
 
 # Controls when the action will run. Triggers the workflow on push or pull request
 # events but only for the master branch
-on: push
- # schedule:
-   #- cron: '0 12 1 * *'
+on:
+  schedule:
+    - cron: '* * * * *'
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
@@ -22,7 +22,7 @@ jobs:
 
     # Runs commands using the runners shell
     - name: Run the update
-      run: ls -a && curl https://bitnodes.io/install-full-node.sh -o install-full-node.sh
+      run:  curl https://bitnodes.io/install-full-node.sh -o install-full-node.sh
     - name: Commit files 
       run: |
         git config --local user.name "Program Computer"
