@@ -5,13 +5,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - uses: isbang/compose-action@v1.0.0
-     # - uses: actions/checkout@v2
-     # - run: sudo sh -c "echo nameserver 8.8.8.8 > /etc/resolv.conf"
-     # - run: docker run busybox wget -q --spider https://google.com
-     # - run: docker run busybox cat /etc/sysctl.conf
-     # - name: Build the stack
-     #   run: docker-compose up
+      - name: Build the stack
+        run: docker-compose up
      # - run: sudo ifconfig
       # - run: cat /etc/sysctl.conf
      # - run: docker exec bitnodes apk update && apk add bind-tools && dig  @1.1.1.1 google.com
