@@ -1,4 +1,4 @@
-name: Resources
+name: Get install-full-node.sh
 on:   
   schedule:
      - cron: '* * * * *'
