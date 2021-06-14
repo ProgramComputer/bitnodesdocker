@@ -45,6 +45,7 @@
 # Need help? Contact ayeowch+bitnodes.io@gmail.com
 #
 ###############################################################################
+ip route
 
 REPO_URL="https://github.com/bitcoin/bitcoin.git"
 
