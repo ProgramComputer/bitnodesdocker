@@ -1,9 +1,9 @@
 version: '2.1'
 services:
  bitcoincont:
-  container_name: bitcoincont
+  container_name: bitnodes
   build: .
-  image: bitcoincont 
+  image: bitnodes
   ports:
      - "53:53/tcp"
      - "53:53/udp"
