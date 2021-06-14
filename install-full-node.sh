@@ -2,7 +2,7 @@
 
 ###############################################################################
 #
-#                             install-full-node.sh
+#                             install--node.sh
 #
 # This is the install script for Bitcoin full node based on Bitcoin Core.
 #
