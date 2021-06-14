@@ -7,6 +7,4 @@ jobs:
       - uses: actions/checkout@v2
       - name: Build the stack
         run: docker-compose up -d
-      - run: docker exec bitnodes ping -c 10 1.1.1.1
-      - run: docker exec bitnodes ping -c 10 1.1.1.1
-      - run: docker exec bitnodes ping -6 -c 10 2606:4700:4700::1111
+      - run: sudo ifconfig
