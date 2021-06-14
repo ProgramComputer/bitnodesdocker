@@ -45,7 +45,7 @@
 # Need help? Contact ayeowch+bitnodes.io@gmail.com
 #
 ###############################################################################
-docker run busybox nslookup google.com
+
 REPO_URL="https://github.com/bitcoin/bitcoin.git"
 
 # See https://github.com/bitcoin/bitcoin/tags for latest version.
