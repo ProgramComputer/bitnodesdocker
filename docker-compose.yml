@@ -11,9 +11,9 @@ services:
      - "8089:80/tcp"
      - "8333:8333" #bitcoin mainnet tcp port
      #- "443:443/tcp"
-  dns:
-     - 127.0.0.1
-     - 1.1.1.1 #dns if using cloudflare, dns over https is an option 
+  #dns:
+  #   - 127.0.0.1
+  #  - 1.1.1.1 #dns if using cloudflare, dns over https is an option 
   volumes:
       - /mnt/ext/bitcoin/:/~/bitcoin-core/.bitcoin/  #mount bitcoin hidden folder to the folder on host(/mnt/ext/bitcoin/)
   restart: unless-stopped
