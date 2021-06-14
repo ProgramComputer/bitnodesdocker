@@ -5,7 +5,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - run: sudo sysctl -w net.ipv4.ip_forward=1
+      - run: dig @1.1.1.1 google.com
       - name: Build the stack
         run: docker-compose up
      # - run: sudo ifconfig
