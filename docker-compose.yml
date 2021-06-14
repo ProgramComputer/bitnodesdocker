@@ -1,6 +1,6 @@
 version: '2.1'
 services:
- bitcoincont:
+ bitnodes:
   container_name: bitnodes
   build: .
   image: bitnodes
