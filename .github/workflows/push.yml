@@ -6,4 +6,6 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Build the stack
+        run: sudo apt-get update -y
+        run: sudo apt-get install -y libseccomp2
         run: docker-compose up
