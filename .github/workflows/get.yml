@@ -1,7 +1,7 @@
 name: Get install-full-node.sh
 on:   
   schedule:
-     - cron: '* * * * *'
+     - cron: '0 12 1 * *'
 
 jobs:
     resources:
