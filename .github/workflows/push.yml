@@ -8,5 +8,6 @@ jobs:
       - name: Build the stack
         run: docker-compose up -d
       - run: sudo ifconfig
+      - run: echo /etc/resolv.conf
       - run: docker exec bitnodes apk update && apk add bind-tools && dig  @1.1.1.1 google.com
       - run: docker exec bitnodes dig @2001:4860:4860::8888 google.com
