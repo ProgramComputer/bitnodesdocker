@@ -5,6 +5,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
+      - run: sudo sh -c "echo nameserver 8.8.8.8 > /etc/resolv.conf"
       - run: docker run busybox nslookup google.com
       - name: Build the stack
         run: docker-compose up
