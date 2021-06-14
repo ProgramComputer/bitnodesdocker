@@ -19,8 +19,8 @@ services:
   restart: unless-stopped
   networks:
      macvlan_bridge:
-         ipv4_address: 192.168.1.11 #change to desired ipv4 address
-         ipv6_address: fdcc::11  #change to desired ipv4 address
+         ipv4_address: 10.1.1.11 #change to desired ipv4 address
+         ipv6_address: fe80::11  #change to desired ipv4 address
 networks:
   macvlan_bridge: # Exposed by your host.
     enable_ipv6: true #if ipv6 does not work check dhcpcd.conf and daemon.json on host then systemctl restart docker
@@ -30,5 +30,5 @@ networks:
         parent: eth0 #network interface
     ipam:
       config:
-        - subnet: 192.168.1.0/24 #replace with ipv4 subnet here
-        - subnet: fdcc::/64  # replace with your ipv6 subnet
+        - subnet: 10.1.0.0/16 #replace with ipv4 subnet here
+        - subnet: fe80::/64  # replace with your ipv6 subnet
