@@ -11,14 +11,14 @@ services:
      - "8089:80/tcp"
      - "8333:8333" #bitcoin mainnet tcp port
      #- "443:443/tcp"
-   dns:
+  dns:
      - 127.0.0.1
      - 1.1.1.1 #dns if using cloudflare, dns over https is an option 
-   volumes:
+  volumes:
       - /mnt/ext/bitcoin/:/~/bitcoin-core/.bitcoin/  #mount bitcoin hidden folder to the folder on host(/mnt/ext/bitcoin/)
-   restart: unless-stopped
-   networks:
-      macvlan_bridge:
+  restart: unless-stopped
+  networks:
+     macvlan_bridge:
          ipv4_address: 192.168.1.11 #change to desired ipv4 address
          ipv6_address: fdcc::11  #change to desired ipv4 address
 networks:
