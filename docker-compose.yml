@@ -31,5 +31,5 @@ networks:
     ipam:
       config:
         - subnet: 10.1.0.0/16 #replace with ipv4 subnet here
-        - gateway: 10.1.0.1
+          gateway: 10.1.0.1
         - subnet: fe80::/64  # replace with your ipv6 subnet
