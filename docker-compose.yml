@@ -1,0 +1,34 @@
+version: '2.1'
+services:
+ bitcoincont:
+  container_name: bitcoincont
+  build: .
+  image: bitcoincont 
+  ports:
+     - "53:53/tcp"
+     - "53:53/udp"
+     - "67:67/udp"
+     - "8089:80/tcp"
+     - "8333:8333" #bitcoin mainnet tcp port
+     #- "443:443/tcp"
+   dns:
+     - 127.0.0.1
+     - 1.1.1.1 #dns if using cloudflare, dns over https is an option 
+   volumes:
+      - /mnt/ext/bitcoin/:/~/bitcoin-core/.bitcoin/  #mount bitcoin hidden folder to the folder on host(/mnt/ext/bitcoin/)
+   restart: unless-stopped
+   networks:
+      macvlan_bridge:
+         ipv4_address: 192.168.1.11 #change to desired ipv4 address
+         ipv6_address: fdcc::11  #change to desired ipv4 address
+networks:
+  macvlan_bridge: # Exposed by your host.
+    enable_ipv6: true #if ipv6 does not work check dhcpcd.conf and daemon.json on host then systemctl restart docker
+    driver: macvlan
+    driver_opts:
+        macvlan_mode: bridge 
+        parent: eth0 #network interface
+    ipam:
+      config:
+        - subnet: 192.168.1.0/24 #replace with ipv4 subnet here
+        - subnet: fdcc::/64  # replace with your ipv6 subnet
